@@ -121,6 +121,8 @@ body{margin:0;min-height:100dvh;overflow:hidden;color:var(--ink);background:var(
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const SONG_SRC="song.mp4"; /* tayyor mp4 shu yerga data: manzil sifatida joylanadi */
 let cur=null;
+const TRK=!/reset|test/.test(location.hash+location.search);
+function track(e,d){if(!TRK)return;try{fetch('/api/notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({e:e,d:d||''}),keepalive:true}).catch(()=>{})}catch(x){}}
 
 for(let i=0;i<16;i++){const h=document.createElement('i');h.textContent='♥';
   h.style.cssText='left:'+Math.random()*100+'%;font-size:'+(12+Math.random()*26)+'px;animation-duration:'+(9+Math.random()*10)+'s;animation-delay:'+(-Math.random()*18)+'s';
@@ -152,7 +154,7 @@ function burst(b){
 }
 
 /* 1-bosqich */
-$('#b1').onclick=()=>go('s2');
+$('#b1').onclick=()=>{track('next');go('s2')};
 
 /* 2-bosqich: "yo'q" qochadi */
 const no=$('#no'),yes=$('#yes');let dodges=0;
@@ -167,16 +169,16 @@ function dodge(e){
   do{x=m+Math.random()*(W-bw-2*m);y=m+Math.random()*(H-bh-2*m);k++}
   while(k<40&&(hit(x,y,bw,bh,yr)||Math.hypot(x+bw/2-px,y+bh/2-py)<150));
   no.style.left=x+'px';no.style.top=y+'px';
-  dodges++;yes.style.setProperty('--g',Math.min(1+dodges*.06,1.5));
+  const nw=Date.now();if(nw-(dodge.l||0)>400)dodges++;dodge.l=nw;yes.style.setProperty('--g',Math.min(1+dodges*.06,1.5));
 }
 no.addEventListener('pointerenter',dodge);
 no.addEventListener('pointerdown',e=>{e.preventDefault();dodge(e)});
 no.addEventListener('focus',()=>dodge());
 no.addEventListener('click',e=>e.preventDefault());
-yes.onclick=()=>{burst(yes);setTimeout(()=>go('s3'),350)};
+yes.onclick=()=>{burst(yes);track('yes',dodges?"yo'q ni "+dodges+" marta bosmoqchi bo'ldi":'');setTimeout(()=>go('s3'),350)};
 
 /* 3-bosqich */
-$$('.food').forEach(b=>b.onclick=()=>{burst(b);try{localStorage.setItem('seen2','1')}catch(e){}setTimeout(()=>go('s4'),350)});
+$$('.food').forEach(b=>b.onclick=()=>{burst(b);track('food',b.textContent.trim());try{localStorage.setItem('seen2','1')}catch(e){}setTimeout(()=>go('s4'),350)});
 
 /* 4-5 bosqich: qo'shiq */
 const vid=$('#vid'),again=$('#again');
@@ -185,12 +187,12 @@ if(SONG_SRC){$('#pick').remove();setTimeout(()=>{vid.src=SONG_SRC.startsWith('da
 if($('#fi'))$('#fi').onchange=e=>{const f=e.target.files[0];if(f){vid.src=URL.createObjectURL(f);$('#nosrc').hidden=true}};
 $('#play').onclick=()=>{
   if(!vid.getAttribute('src')){$('#nosrc').hidden=false;return}
-  vid.play().catch(()=>{});go('s5');
+  track('play');vid.play().catch(()=>{});go('s5');
 };
 vid.addEventListener('play',()=>{vid.controls=true;again.classList.remove('on')});
-vid.addEventListener('ended',()=>again.classList.add('on'));
-$('#ay').onclick=()=>{again.classList.remove('on');vid.currentTime=0;vid.play().catch(()=>{})};
-$('#an').onclick=()=>{vid.pause();go('s6')};
+vid.addEventListener('ended',()=>{again.classList.add('on');track('end')});
+$('#ay').onclick=()=>{track('again');again.classList.remove('on');vid.currentTime=0;vid.play().catch(()=>{})};
+$('#an').onclick=()=>{track('final');vid.pause();go('s6')};
 
 /* qo'shiq ostidagi matn paneli: LRC formatida [mm:ss.xx] qator */
 const LRC=``;
@@ -218,8 +220,9 @@ try{
   if(/reset/.test(location.hash+location.search))localStorage.removeItem('seen2');
   seen=localStorage.getItem('seen2')==='1';
 }catch(e){}
+track(seen?'back':'open');
 if(seen){$('#h4').textContent="Qo'shiq sizni kutmoqda";go('s4')}else go('s1');
-let taps=0,tt;$('#h4').addEventListener('click',()=>{if(!seen)return;taps++;clearTimeout(tt);tt=setTimeout(()=>{taps=0},1500);if(taps>=5){try{localStorage.removeItem('seen2')}catch(e){}location.reload()}});
+let taps=0,tt;$('#h4').addEventListener('click',()=>{if(!seen)return;taps++;clearTimeout(tt);tt=setTimeout(()=>{taps=0},1500);if(taps>=5){try{localStorage.removeItem('seen2')}catch(e){}location.hash='reset';location.reload()}});
 </script>
 </body>
 </html>
