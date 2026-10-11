@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sizga bir savolim bor 🌸</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#ffd0c8">
+<meta name="description" content="Sizga kichik bir taklifim bor">
+<meta property="og:title" content="Sizga bir savolim bor 🌸">
+<meta property="og:description" content="Ochib ko'ring">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg1:#ffe4ec;--bg2:#ffcfc2;--ink:#4b1740;--ac:#ff5f8a;--ac2:#ffb36b;--card:rgba(255,255,255,.6)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2b0f33;--bg2:#5a1a4a;--ink:#ffe9ef;--ac:#ff7aa0;--ac2:#ffc27a;--card:rgba(255,255,255,.09)}}
+:root[data-theme="dark"]{--bg1:#2b0f33;--bg2:#5a1a4a;--ink:#ffe9ef;--ac:#ff7aa0;--ac2:#ffc27a;--card:rgba(255,255,255,.09)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100dvh;overflow:hidden;color:var(--ink);background:var(--bg1);background-image:linear-gradient(160deg,var(--bg1),var(--bg2));font:600 1rem "Quicksand",system-ui,sans-serif}
+#bg{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#bg i{position:absolute;bottom:-8vh;font-style:normal;color:var(--ac);opacity:0;animation:fl linear infinite}
+@keyframes fl{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.35}100%{transform:translateY(-118vh) rotate(40deg);opacity:0}}
+.s{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;padding:calc(24px + env(safe-area-inset-top,0px)) 24px calc(24px + env(safe-area-inset-bottom,0px));text-align:center}
+.s.on{display:flex}
+.s.out{opacity:0;transition:opacity .38s}
+.t{margin:0;font:700 clamp(2.3rem,9vw,3.8rem)/1.1 "Caveat",cursive;max-width:17em}
+.t.sub{font-size:clamp(1.8rem,7vw,2.8rem);color:var(--ac)}
+.t.long{font-size:clamp(1.8rem,6.2vw,2.6rem);max-width:22em}
+.w{display:inline-block;opacity:0}
+.s.on .w{animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.09s + .15s)}
+@keyframes rise{from{opacity:0;transform:translateY(22px) scale(.9);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.act{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+.act.col{flex-direction:column}
+.b{font:700 1.08rem "Quicksand",system-ui,sans-serif;color:#fff;background:linear-gradient(135deg,var(--ac),var(--ac2));border:0;border-radius:999px;padding:14px 30px;min-height:48px;cursor:pointer;opacity:0;box-shadow:0 8px 24px rgba(255,95,138,.35);transition:transform .2s}
+.s.on .b{animation:up .6s cubic-bezier(.2,.8,.2,1) forwards,glow 2.6s ease-in-out infinite;animation-delay:calc(var(--d,1s) + var(--k,0)*.12s),calc(var(--d,1s) + 1.2s)}
+.b:hover{transform:translateY(-3px) scale(calc(var(--g,1)*1.04))}
+.b.o{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ac)}
+#yes{scale:var(--g,1)}
+#no.run{position:fixed;z-index:5;transition:left .35s cubic-bezier(.3,1.5,.5,1),top .35s cubic-bezier(.3,1.5,.5,1)}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes glow{50%{box-shadow:0 8px 40px rgba(255,95,138,.7)}}
+.hb{position:fixed;pointer-events:none;color:var(--ac);z-index:9}
+#vid{width:min(92vw,720px);max-height:58vh;border-radius:18px;background:#000;box-shadow:0 14px 50px rgba(75,23,64,.35)}
+#again{display:flex;flex-direction:column;align-items:center;gap:12px;opacity:0;pointer-events:none;transition:opacity .5s}
+#again.on{opacity:1;pointer-events:auto}
+#again .t{font-size:clamp(1.7rem,6vw,2.3rem)}
+#again .b,#again .b{animation:none!important;opacity:1}
+.pick{font-size:.85rem;opacity:.75;display:grid;gap:4px;max-width:90vw}
+.kid{width:min(62vw,260px);color:var(--ink);animation:bob 3s ease-in-out infinite}
+.fl{transform-box:view-box;transform-origin:122px 122px;animation:sway 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@keyframes sway{50%{transform:rotate(7deg)}}
+.lyr{display:none;flex-direction:column;align-items:center;gap:6px;min-height:6.5rem;width:min(92vw,720px);text-align:center}
+.lyr.on{display:flex}
+.lyr span{font:700 1rem "Quicksand",system-ui,sans-serif;opacity:.45;min-height:1.3em}
+.lyr b{font:700 clamp(1.7rem,6vw,2.3rem)/1.15 "Caveat",cursive;color:var(--ac);animation:lin .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes lin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+
+<section class="s" id="s1">
+  <h1 class="t">ertaga universitet oshxonasida ovqatlanmoqchiman, lekin nimadir yetishmayapti</h1>
+  <div class="act"><button class="b" id="b1">nima ekan</button></div>
+</section>
+
+<section class="s" id="s2">
+  <h1 class="t">ha, bu albatta siz</h1>
+  <p class="t sub">man bilan abet qilasizmi</p>
+  <div class="act" id="yn"><button class="b" id="yes">ha</button><button class="b o" id="no">yo'q</button></div>
+</section>
+
+<section class="s" id="s3">
+  <h1 class="t">bilgandim rozi bo'lishingizni</h1>
+  <p class="t sub">unda nima yiymiz</p>
+  <div class="act col">
+    <button class="b food">somsa</button>
+    <button class="b food">osh</button>
+    <button class="b food">ertaga tanlaymiz</button>
+  </div>
+</section>
+
+<section class="s" id="s4">
+  <h1 class="t long" id="h4">yaxshi tanlov, lekin ertaga abetgacha zerikib o'tirish niyatingiz yo'qdir. Ertaga abetgacha zerikib qolmaslik uchun qo'shiq eshitib turing.</h1>
+  <div class="act"><button class="b" id="play">▶ play</button></div>
+  <label class="pick" id="pick">Test uchun: tayyor mp4 ni tanlang<input type="file" id="fi" accept="video/*"></label>
+  <p class="pick" id="nosrc" hidden>Qo'shiq videosi hali qo'shilmagan. Yuqoridan mp4 tanlang.</p>
+</section>
+
+<section class="s" id="s5">
+  <video id="vid" playsinline preload="auto"></video>
+  <div class="lyr" id="lyr" aria-live="polite"><span id="lp"></span><b id="lc"></b><span id="ln"></span></div>
+  <label class="pick" id="lpick" hidden>Matn fayli (.lrc yoki .txt)<input type="file" id="lf" accept=".lrc,.txt,text/plain"></label>
+  <div id="again">
+    <p class="t">yana eshitishni xohlaysizmi?</p>
+    <div class="act"><button class="b" id="ay">ha</button><button class="b o" id="an">yo'q</button></div>
+  </div>
+</section>
+
+<section class="s" id="s6">
+  <svg class="kid" viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="80" cy="70" r="42"/>
+    <circle cx="68" cy="68" r="2.5" fill="currentColor"/><circle cx="94" cy="68" r="2.5" fill="currentColor"/>
+    <ellipse cx="58" cy="82" rx="7" ry="4" fill="#ff9db4" stroke="none"/><ellipse cx="104" cy="82" rx="7" ry="4" fill="#ff9db4" stroke="none"/>
+    <path d="M72 84q9 7 18 0"/>
+    <path d="M80 112v70M80 130l-24 24M80 182l-18 40M80 182l18 40M80 130l42-8"/>
+    <g class="fl">
+      <path d="M122 122l30-62" stroke="#4f9d63"/>
+      <g fill="#ff6f96" stroke="none"><circle cx="152" cy="42" r="9"/><circle cx="165" cy="52" r="9"/><circle cx="160" cy="68" r="9"/><circle cx="144" cy="68" r="9"/><circle cx="139" cy="52" r="9"/></g>
+      <circle cx="152" cy="56" r="7" fill="#ffc94d" stroke="none"/>
+    </g>
+  </svg>
+  <h1 class="t">manabu gul sizga, ertaga ko'rishguncha</h1>
+</section>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const SONG_SRC="song.mp4"; /* tayyor mp4 shu yerga data: manzil sifatida joylanadi */
+let cur=null;
+
+for(let i=0;i<16;i++){const h=document.createElement('i');h.textContent='♥';
+  h.style.cssText='left:'+Math.random()*100+'%;font-size:'+(12+Math.random()*26)+'px;animation-duration:'+(9+Math.random()*10)+'s;animation-delay:'+(-Math.random()*18)+'s';
+  $('#bg').appendChild(h)}
+
+function prep(sec){
+  if(sec.dataset.p)return;sec.dataset.p=1;let n=0;
+  $$('#'+sec.id+' .t').forEach(el=>{
+    el.innerHTML=el.textContent.trim().split(/\s+/).map(w=>'<span class="w" style="--i:'+(n++)+'">'+w+'</span>').join(' ');
+  });
+  sec.style.setProperty('--d',(n*.09+.4)+'s');
+  $$('#'+sec.id+' .act>*').forEach((b,k)=>b.style.setProperty('--k',k));
+}
+function go(id){
+  const nx=$('#'+id),show=()=>{prep(nx);nx.classList.add('on');cur=nx};
+  if(cur){cur.classList.add('out');setTimeout(()=>{cur.classList.remove('on','out');show()},380)}else show();
+}
+function burst(b){
+  const r=b.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+  for(let i=0;i<14;i++){
+    const h=document.createElement('i');h.className='hb';h.textContent='♥';
+    h.style.cssText='left:'+cx+'px;top:'+cy+'px;font-size:'+(14+Math.random()*16)+'px;font-style:normal';
+    document.body.appendChild(h);
+    const a=Math.random()*6.283,d=70+Math.random()*90;
+    h.animate([{transform:'translate(-50%,-50%) scale(.4)',opacity:1},
+      {transform:'translate(calc(-50% + '+Math.cos(a)*d+'px),calc(-50% + '+(Math.sin(a)*d-40)+'px)) scale(1.2)',opacity:0}],
+      {duration:900+Math.random()*400,easing:'cubic-bezier(.2,.8,.3,1)'}).onfinish=()=>h.remove();
+  }
+}
+
+/* 1-bosqich */
+$('#b1').onclick=()=>go('s2');
+
+/* 2-bosqich: "yo'q" qochadi */
+const no=$('#no'),yes=$('#yes');let dodges=0;
+const hit=(x,y,w,h,r)=>x<r.right+12&&x+w>r.left-12&&y<r.bottom+12&&y+h>r.top-12;
+function dodge(e){
+  if(!no.classList.contains('run')){
+    const r=no.getBoundingClientRect();
+    no.style.left=r.left+'px';no.style.top=r.top+'px';no.classList.add('run');
+  }
+  const W=innerWidth,H=innerHeight,bw=no.offsetWidth,bh=no.offsetHeight,m=16,yr=yes.getBoundingClientRect();
+  const px=e&&e.clientX||0,py=e&&e.clientY||0;let x,y,k=0;
+  do{x=m+Math.random()*(W-bw-2*m);y=m+Math.random()*(H-bh-2*m);k++}
+  while(k<40&&(hit(x,y,bw,bh,yr)||Math.hypot(x+bw/2-px,y+bh/2-py)<150));
+  no.style.left=x+'px';no.style.top=y+'px';
+  dodges++;yes.style.setProperty('--g',Math.min(1+dodges*.06,1.5));
+}
+no.addEventListener('pointerenter',dodge);
+no.addEventListener('pointerdown',e=>{e.preventDefault();dodge(e)});
+no.addEventListener('focus',()=>dodge());
+no.addEventListener('click',e=>e.preventDefault());
+yes.onclick=()=>{burst(yes);setTimeout(()=>go('s3'),350)};
+
+/* 3-bosqich */
+$$('.food').forEach(b=>b.onclick=()=>{burst(b);try{localStorage.setItem('seen2','1')}catch(e){}setTimeout(()=>go('s4'),350)});
+
+/* 4-5 bosqich: qo'shiq */
+const vid=$('#vid'),again=$('#again');
+function blobURL(d){const s=atob(d.slice(d.indexOf(',')+1)),u=new Uint8Array(s.length);for(let i=0;i<s.length;i++)u[i]=s.charCodeAt(i);return URL.createObjectURL(new Blob([u],{type:'video/mp4'}))}
+if(SONG_SRC){$('#pick').remove();setTimeout(()=>{vid.src=SONG_SRC.startsWith('data:')?blobURL(SONG_SRC):SONG_SRC},60)}
+if($('#fi'))$('#fi').onchange=e=>{const f=e.target.files[0];if(f){vid.src=URL.createObjectURL(f);$('#nosrc').hidden=true}};
+$('#play').onclick=()=>{
+  if(!vid.getAttribute('src')){$('#nosrc').hidden=false;return}
+  vid.play().catch(()=>{});go('s5');
+};
+vid.addEventListener('play',()=>{vid.controls=true;again.classList.remove('on')});
+vid.addEventListener('ended',()=>again.classList.add('on'));
+$('#ay').onclick=()=>{again.classList.remove('on');vid.currentTime=0;vid.play().catch(()=>{})};
+$('#an').onclick=()=>{vid.pause();go('s6')};
+
+/* qo'shiq ostidagi matn paneli: LRC formatida [mm:ss.xx] qator */
+const LRC=``;
+let L=[],li=-2;
+const lyr=$('#lyr'),lc=$('#lc'),lp=$('#lp'),ln=$('#ln');
+function parseLRC(s){return s.split('\n').map(x=>{const m=x.trim().match(/^\[(\d+):(\d+(?:\.\d+)?)\]\s*(.*)$/);return m?[+m[1]*60+ +m[2],m[3]]:null}).filter(Boolean).sort((a,b)=>a[0]-b[0])}
+function setL(s){L=parseLRC(s);li=-2;lyr.classList.toggle('on',L.length>0);showL()}
+function showL(){
+  const t=vid.currentTime;let i=-1;
+  for(let k=0;k<L.length;k++){if(L[k][0]<=t)i=k;else break}
+  if(i===li)return;li=i;
+  lp.textContent=i>0?L[i-1][1]:'';
+  lc.textContent=i>=0?L[i][1]:'';
+  ln.textContent=L[i+1]?L[i+1][1]:'';
+  lc.style.animation='none';void lc.offsetWidth;lc.style.animation='';
+}
+vid.addEventListener('timeupdate',showL);vid.addEventListener('seeked',showL);
+setL(LRC);
+if(/setup/.test(location.hash))$('#lpick').hidden=false;
+$('#lf').onchange=e=>{const f=e.target.files[0];if(f)f.text().then(setL)};
+
+/* boshlash: bir marta so'rovnoma, keyin faqat qo'shiq */
+let seen=false;
+try{
+  if(/reset/.test(location.hash+location.search))localStorage.removeItem('seen2');
+  seen=localStorage.getItem('seen2')==='1';
+}catch(e){}
+if(seen){$('#h4').textContent="Qo'shiq sizni kutmoqda";go('s4')}else go('s1');
+let taps=0,tt;$('#h4').addEventListener('click',()=>{if(!seen)return;taps++;clearTimeout(tt);tt=setTimeout(()=>{taps=0},1500);if(taps>=5){try{localStorage.removeItem('seen2')}catch(e){}location.reload()}});
+</script>
+</body>
+</html>
